@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="text-center text-4xl font-bold m-10 text-yellow-700">Welcome to the Bank!</h1>
+    </header>
+
+   <section class="container mx-auto mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="col-span-1 border shadow-2xl mt-5">
+            <h2 class="text-3xl font-semibold text-center mb-5">Summary:</h2>
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="col-span-1 md:col-span-2">
+            <div class="flex justify-center mt-5">
+
+                <div class="w-[400px] h-[200px] bg-red-300 flex justify-center items-center rounded-lg">
+                    <h2 class="text-3xl">Total: <span id="total-balance">0</span>৳</h2>
+                    </div>
+            </div>
+
+            <div class="flex justify-center gap-2 mt-5">
+                    <div class="w-[200px] h-[150px] md:w-[400px] md:h-[200px] bg-green-600 flex justify-center items-center rounded-lg">
+                        <h2 class="text-3xl text-white">Deposit: <span id="total-deposit">0</span>৳</h2>
+                    </div>
+
+                    <div class="w-[200px] h-[150px] md:w-[400px] md:h-[200px] bg-slate-600 flex justify-center items-center rounded-lg">
+                        <h2 class="text-3xl text-white">Withdraw: <span id="total-withdraw">0</span>৳</h2>
+                    </div>
+            </div>
+
+            <div class="mt-5 flex flex-col  md:flex-row justify-center gap-3">
+                
+            <input id="deposit-input" min="0" class="border border-slate-800 p-3 rounded-lg w-full md:w-[300px]" placeholder="Deposit" type="number">
+
+            <button id="deposit-btn" class="bg-green-400 p-3 rounded-xl text-white font-semibold">Deposit</button>
+
+            
+            <input id="withdraw-input" min="0" class="border border-slate-800 p-3 rounded-lg w-full md:w-[300px]" placeholder="Withdraw" type="number">
+
+            <button id="withdraw-btn" class="bg-red-300 p-3 rounded-xl text-white font-semibold">Withdraw</button>
+            </div>
+            </div>
+
+        </div>
+
+            </div>
+
+           
+
+
+    </div>
+   </section>
+
+   <script type="module" src="./bankCalculation.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <!-- the chart js file includes a Chart object which can be available after the cdn script runs -->
+   <!-- therefore, we need to first put the cdn script then the chart.js script -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script type="module" src="./chart.js"></script>
+
+</body>
+</html>
